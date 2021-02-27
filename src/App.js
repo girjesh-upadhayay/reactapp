@@ -2,7 +2,7 @@
 import React,{useState} from 'react'
 import './App.css';
 import Header from './components/Header';
-import Task from "./components/Task";
+import Tasks from "./components/Tasks";
 
 // class App extends React.Component{
 
@@ -36,7 +36,7 @@ function App() {
     <div className="App">
     
      <Header title="Task Tracker"/>
-     <Task tasks={tasks} />
+     <Tasks tasks={tasks} />
     </div>
     </>
   );
