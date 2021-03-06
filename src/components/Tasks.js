@@ -1,5 +1,6 @@
 
 import PropTypes from 'prop-types'
+import Task from "./Task";
 
 
 // const tasks = [
@@ -22,14 +23,15 @@ import PropTypes from 'prop-types'
 //         reminder: true,
 //     }
 // ];
-const Task = (props) => {
+const Tasks = (props) => {
     
     return (
         <>
          {props.tasks.map((task)=> (
             <div key={task.id}>
-            <h3 >{task.text}</h3>   
-            <p >{task.day}</p> 
+            {/* <h3 >{task.text}</h3>   
+            <p >{task.day}</p>  */}
+            <Task task={task}></Task>
             </div>
          ))}   
         </>
@@ -42,4 +44,4 @@ Task.propTypes = {
 Task.defaultProps = {
 
 }
-export default Task
+export default Tasks
