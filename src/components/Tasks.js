@@ -31,7 +31,7 @@ const Tasks = (props) => {
             <div key={task.id}>
             {/* <h3 >{task.text}</h3>   
             <p >{task.day}</p>  */}
-            <Task task={task}></Task>
+            <Task task={task} onDelete={props.onDelete}></Task>
             </div>
          ))}   
         </>
