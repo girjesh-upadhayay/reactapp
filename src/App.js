@@ -13,6 +13,14 @@ import Tasks from "./components/Tasks";
 // }
 function App() {
 
+  let newtime = new Date().toLocaleString();
+  const [mytime,setMytime] = useState(newtime);
+
+  setInterval(()=>{
+   let newtime = new Date().toLocaleString();
+    setMytime(newtime);
+  },1000);
+
   const [tasks, setTasks] = useState([{
     id:1,
     text: 'Doctor Appointment',
@@ -38,8 +46,8 @@ const deleteTask = (id) => {
   return (
     <>
     <div className="App">
-    
-     <Header title="Task Tracker"/>
+    <p style={{color:'red', padding:'25px',fontFamily:'monospace'}}>{mytime}</p>
+     <Header title="Time"/>
      <Tasks tasks={tasks} onDelete={deleteTask} />
     </div>
     </>
