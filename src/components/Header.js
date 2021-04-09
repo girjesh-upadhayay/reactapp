@@ -3,7 +3,8 @@ import Button from "./Button";
 
 const Header = ({title}) => {
 
-    const onClick = ()=>{
+    const onClick = (e)=>{
+      
         console.log('clicked');
     }
     return (

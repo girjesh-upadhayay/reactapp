@@ -3,6 +3,9 @@ import React,{useState} from 'react'
 import './App.css';
 import Header from './components/Header';
 import Tasks from "./components/Tasks";
+import Form from "./components/Form";
+import AddTask from "./components/AddTask";
+
 
 // class App extends React.Component{
 
@@ -32,23 +35,32 @@ function App() {
     text: 'Meeting at office',
     day: 'Feb 5th at 5:00 pm',
     reminder: false,
-},
-{
-    id:3,
-    text: 'Shopping at mall',
-    day: 'Feb 5th at 9:00 pm',
-    reminder: true,
-}])
+}
+])
 
 const deleteTask = (id) => {
+  console.log(id);
      setTasks(tasks.filter((task)=> task.id!==id));
+}
+
+const addTask = (task) => {
+  console.log(task);
+  const id = Math.floor(Math.random()*10000)+1;
+  const newtask = {id,...task};
+  setTasks([newtask,...tasks]);
+
 }
   return (
     <>
     <div className="App">
     <p style={{color:'red', padding:'25px',fontFamily:'monospace'}}>{mytime}</p>
-     <Header title="Time"/>
+     <Header title="Now PUB G ban in india!"/>
+     <AddTask onAdd={addTask}/>
+     {tasks.length > 0 ? (
      <Tasks tasks={tasks} onDelete={deleteTask} />
+     ) : (' No Items')}
+
+     
     </div>
     </>
   );
